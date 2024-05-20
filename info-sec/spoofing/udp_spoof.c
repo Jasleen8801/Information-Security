@@ -15,10 +15,10 @@ int main(){
   struct ipheader *ip = (struct ipheader *)buffer;
   struct udpheader *udp = (struct udpheader *)(buffer + sizeof(struct ipheader));
 
-  char *data = buffer + sizeof(struct ipheader) + sizeof(struct udpheader);
+  char *data1 = buffer + sizeof(struct ipheader) + sizeof(struct udpheader);
   const char *msg = "UDP Message\n";
   int data_len = strlen(msg);
-  strncpy(data, msg, data_len);
+  strncpy(data1, msg, data_len);
 
   udp->udph_srcport = htons(12345);
   udp->udph_destport = htons(9090);
